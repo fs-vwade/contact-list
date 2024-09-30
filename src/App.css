@@ -1,3 +1,6 @@
+:root {
+	--phi: calc(sqrt(5) * 0.5 - 0.5);
+}
 #root {
 	max-width: 1280px;
 	margin: 0 auto;
@@ -6,8 +9,18 @@
 }
 
 td {
-	padding: 0 1rem;
+	padding: calc(1rem * pow(var(--phi), 2)) calc(1rem * pow(var(--phi), -1));
 	text-wrap: nowrap;
+}
+
+tr,
+td {
+	transition-duration: 100ms;
+}
+
+tr:hover,
+td:hover {
+	background-color: #f0f0f010;
 }
 
 .logo {
