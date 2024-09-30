@@ -1,9 +1,13 @@
-export default function Contact({ name, email, phone }) {
+export default function Contact({ contact, selector }) {
 	return (
-		<tr>
-			<td>{name}</td>
-			<td>{email}</td>
-			<td>{phone}</td>
+		<tr
+			onClick={() => {
+				selector(contact);
+			}}
+		>
+			<td>{contact.name}</td>
+			<td>{contact.email}</td>
+			<td>{contact.phone}</td>
 		</tr>
 	);
 }

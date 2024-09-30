@@ -9,7 +9,7 @@ const dummyContacts = [
 	{ id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
 ];
 
-export default function ContactList({ onSelect }) {
+export default function ContactList({ selector }) {
 	const [contacts, setContacts] = useState(dummyContacts);
 
 	useEffect(() => {
@@ -39,17 +39,7 @@ export default function ContactList({ onSelect }) {
 					<td>Phone</td>
 				</tr>
 				{contacts.map((e) => {
-					return (
-						<Contact
-							key={e.id}
-							name={e.name}
-							email={e.email}
-							phone={e.phone}
-							onClick={() => {
-								onSelect(e);
-							}}
-						/>
-					);
+					return <Contact key={e.id} contact={e} selector={selector} />;
 				})}
 			</tbody>
 		</table>

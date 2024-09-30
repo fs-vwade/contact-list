@@ -1,15 +1,15 @@
 import { useState } from "react";
 import ContactList from "./components/ContactList";
+import ContactView from "./components/ContactView";
 import "./App.css";
 
 export default function App() {
 	const [selectedContact, setSelectedContact] = useState(null);
-	function passContact(contact) {
-		setSelectedContact(contact);
-	}
+
 	return (
 		<>
-			<ContactList />
+			<ContactList selector={setSelectedContact} />
+			<ContactView selected={selectedContact} />
 		</>
 	);
 }
