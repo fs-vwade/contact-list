@@ -1,9 +1,9 @@
 export default function Contact({ name, email, phone }) {
 	return (
-		<td>
-			<tr>{name}</tr>
-			<tr>{email}</tr>
-			<tr>{phone}</tr>
-		</td>
+		<tr>
+			<td>{name}</td>
+			<td>{email}</td>
+			<td>{phone}</td>
+		</tr>
 	);
 }

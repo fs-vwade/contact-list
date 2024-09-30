@@ -23,18 +23,11 @@ export default function ContactList() {
 					<td>Email</td>
 					<td>Phone</td>
 				</tr>
-				<tr>
-					{contacts.map((e) => {
-						return (
-							<Contact
-								key={e.id}
-								name={e.name}
-								email={e.email}
-								phone={e.phone}
-							/>
-						);
-					})}
-				</tr>
+				{contacts.map((e) => {
+					return (
+						<Contact key={e.id} name={e.name} email={e.email} phone={e.phone} />
+					);
+				})}
 			</tbody>
 		</table>
 	);
